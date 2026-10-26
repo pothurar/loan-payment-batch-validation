@@ -18,6 +18,6 @@ jobs:
           pip install -r requirements.txt
           pip install pytest pytest-cov
       - name: Run tests with coverage
-        run: pytest --cov=loan_batch --cov-report=term-missing -q
+        run: python -m pytest --cov=loan_batch --cov-report=term-missing -q
       - name: Smoke-test the sample file
         run: python -m loan_batch.cli data/sample_payments.csv --batch-id sample-2026-01-15
